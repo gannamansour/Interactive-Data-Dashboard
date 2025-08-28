@@ -32,15 +32,15 @@ with st.sidebar:
     )
 
 if selected == "Telescope Data":
-       st.title("Dashboard For Telescope Data")
-       data = pd.read_csv("Telescope_data.csv")
-       data = pd.DataFrame(data)
-       st.write("You selected All Data")
-       st.dataframe(data)
+    st.title("Dashboard For Telescope Data")
+    data = pd.read_csv(r"D:\Knn-LinearRegression-main\Telescope_data.csv")
+    data = pd.DataFrame(data)
+    st.write("You selected All Data")
+    st.dataframe(data)
 
 if selected == "California Houses":
-       st.title("Dashboard For California Houses")
-       data = pd.read_csv("California_Houses.csv")
-       data = pd.DataFrame(data)
-       st.write("You selected All Data")
-       st.dataframe(data)       
+    st.title("Dashboard For California Houses")
+    data = pd.read_csv(r"D:\Knn-LinearRegression-main\California_Houses.csv")
+    data = pd.DataFrame(data)
+    st.write("You selected All Data")
+    st.dataframe(data)       
