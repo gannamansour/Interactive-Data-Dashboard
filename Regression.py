@@ -12,7 +12,7 @@ from contextlib import contextmanager, redirect_stdout
 from io import StringIO
 
 def app():
-st.title("California Houses")
+    st.title("California Houses")
 
     # Output in Web Streamlit :
 @contextmanager
@@ -51,7 +51,7 @@ if selected == "Linear Regression":
         st.title("Linear Regression For California Houses")
         st.title("Choose ")
         with st.sidebar:
-        selected_Attri = option_menu(
+            selected_Attrib = option_menu(
             menu_title="User's Input For Data Preparation",
             options=[
                     "Median_Income",
@@ -81,13 +81,13 @@ if selected == "Linear Regression":
         if Button :
             st.title("Simple Scatter Plot")
             fig, ax = plt.subplots()
-            ax.scatter(data['Median_House_Value'].head(Number_Of_Data_Headers),data[selected_Attri].head(Number_Of_Data_Headers))
+            ax.scatter(data['Median_House_Value'].head(Number_Of_Data_Headers),data[selected_Attrib].head(Number_Of_Data_Headers))
             ax.set_xlabel("Median House Value")  
-            ax.set_ylabel(selected_Attri)  
+            ax.set_ylabel(selected_Attrib)  
             st.pyplot(fig)
 
             x = data['Median_House_Value'].head(Number_Of_Data_Headers)
-            y = data[selected_Attri].head(Number_Of_Data_Headers)
+            y = data[selected_Attrib].head(Number_Of_Data_Headers)
             x_train , x_test , y_train , y_test = train_test_split(x, y, test_size=0.2, random_state=20)
             x_train = np.array(x_train).reshape(-1,1)
             output = st.empty()
@@ -119,5 +119,5 @@ if selected == "Linear Regression":
             ax.scatter(x_train, y_train)
             ax.plot(x_train, y_pred_train1, color='blue')
             ax.set_xlabel("Median House Value") 
-            ax.set_ylabel(selected_Attri) 
+            ax.set_ylabel(selected_Attrib) 
             st.pyplot(fig)
