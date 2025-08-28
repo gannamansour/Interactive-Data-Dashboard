@@ -52,12 +52,12 @@ with st.sidebar:
     selected = option_menu(
         menu_title="User's Input For Data Preparation",
         options=[
-              "Show Data",
-              "Balancing Telescope Data",
-              "Spliting Data",
-              "K-NN Classification",
-              "K-Mean Clustering",
-              "model accuracy, precision, recall and f-score"
+            "Show Data",
+            "Balancing Telescope Data",
+            "Spliting Data",
+            "K-NN Classification",
+            "K-Mean Clustering",
+            "model accuracy, precision, recall and f-score"
         ],
     )
 
@@ -161,7 +161,7 @@ if selected == "K-Mean Clustering":
         st.pyplot(fig)
 
 if selected == "model accuracy, precision, recall and f-score":
-     
+    
     # Label encoding
     for col in data.columns:
         le = LabelEncoder()
@@ -337,5 +337,3 @@ if selected == "K-NN Classification":
         st.title("Training Sample Count")
         with st.expander("Number of Samples Used for Training"):
             st.code(knn.n_samples_fit_)
-
-         
